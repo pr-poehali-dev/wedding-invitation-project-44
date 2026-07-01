@@ -26,21 +26,26 @@ const gallery = [COUPLE_IMG, HERO_VIDEO, COUPLE_IMG, HERO_VIDEO];
 
 function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).style.animationDelay =
-              (e.target as HTMLElement).dataset.delay || '0s';
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    els.forEach((el) => io.observe(el));
+    const apply = () => {
+      const els = document.querySelectorAll('.reveal:not(.is-visible)');
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const el = e.target as HTMLElement;
+              const delay = el.dataset.delay || '0s';
+              el.style.transitionDelay = delay;
+              el.classList.add('is-visible');
+              io.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0, rootMargin: '0px 0px -40px 0px' }
+      );
+      els.forEach((el) => io.observe(el));
+      return io;
+    };
+    const io = apply();
     return () => io.disconnect();
   }, []);
 }
