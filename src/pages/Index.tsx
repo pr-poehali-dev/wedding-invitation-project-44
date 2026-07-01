@@ -137,25 +137,23 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 text-center px-6">
-          <p className="reveal text-gold uppercase tracking-[0.4em] text-xs sm:text-sm mb-6 max-w-xl mx-auto">
+          <p className="text-gold uppercase tracking-[0.4em] text-xs sm:text-sm mb-6 max-w-xl mx-auto animate-[fade-up_0.7s_ease_0s_both]">
             Главный инфоповод этого года. Наша свадьба.
           </p>
           <h1
-            className="reveal font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] font-light"
-            data-delay="0.15s"
+            className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.9] font-light animate-[fade-up_0.7s_ease_0.15s_both]"
           >
             Кристина
             <span className="block text-gold-gradient italic">&amp;</span>
             Владимир
           </h1>
-          <div className="reveal mx-auto mt-8 w-40 h-px gold-line" data-delay="0.3s" />
-          <p className="reveal mt-8 text-white/70 tracking-widest text-sm sm:text-base" data-delay="0.4s">
+          <div className="mx-auto mt-8 w-40 h-px gold-line animate-[fade-up_0.7s_ease_0.3s_both]" />
+          <p className="mt-8 text-white/70 tracking-widest text-sm sm:text-base animate-[fade-up_0.7s_ease_0.4s_both]">
             08.08.2026 · ИРКУТСК
           </p>
           <button
             onClick={() => scrollTo('rsvp')}
-            className="reveal mt-12 inline-flex items-center gap-3 px-10 py-4 bg-gold text-navy font-medium tracking-wide rounded-full hover:bg-gold-light transition-colors"
-            data-delay="0.55s"
+            className="mt-12 inline-flex items-center gap-3 px-10 py-4 bg-gold text-navy font-medium tracking-wide rounded-full hover:bg-gold-light transition-colors animate-[fade-up_0.7s_ease_0.55s_both]"
           >
             Подтвердить присутствие
             <Icon name="ArrowRight" size={18} />
